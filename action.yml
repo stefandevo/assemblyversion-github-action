@@ -1,0 +1,12 @@
+name: "Set AssemblyVersion"
+description: "Sets the assemblyversion in csproj file by yyyy.mm.dd.x where x is the next revision"
+inputs:
+  project-file:
+    description: "Project file"
+    required: true
+outputs:
+  version:
+    description: "The new version"
+runs:
+  using: "node12"
+  main: "index.js"

@@ -1,0 +1,23 @@
+{
+  "name": "assemblyversion-github-action",
+  "version": "1.0.0",
+  "description": "Github Action for settings AssemblyVersion of csproj files .net",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefandevo/assemblyversion-github-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefandevo/assemblyversion-github-action/issues"
+  },
+  "homepage": "https://github.com/stefandevo/assemblyversion-github-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "xmldom": "^0.3.0",
+    "xpath": "0.0.27"
+  }
+}
