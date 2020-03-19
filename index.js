@@ -5,6 +5,8 @@ const dom = require("xmldom").DOMParser;
 
 try {
 	let projectFile = core.getInput("project-file");
+	let suffix = core.getInput("suffix");
+
 	var text = fs.readFileSync(projectFile, "utf8");
 
 	var doc = new dom().parseFromString(text);
@@ -22,6 +24,16 @@ try {
 	text = text.replace(
 		"<AssemblyVersion>" + currentVersion + "</AssemblyVersion>",
 		"<AssemblyVersion>" + nextVersion + "</AssemblyVersion>"
+	);
+
+	if (suffix) {
+		currentVersion = currentVersion + "-" + suffix;
+		nextVersion = nextVersion + "-" + suffix;
+	}
+
+	text = text.replace(
+		"<FileVersion>" + currentVersion + "</FileVersion>",
+		"<FileVersion>" + nextVersion + "</FileVersion>"
 	);
 
 	fs.writeFileSync(projectFile, text, "utf8");

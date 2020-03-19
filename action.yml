@@ -4,6 +4,9 @@ inputs:
   project-file:
     description: "Project file"
     required: true
+  suffix:
+    description: "For example 'beta'; can be left empty"
+    required: false
 outputs:
   version:
     description: "The new version"
