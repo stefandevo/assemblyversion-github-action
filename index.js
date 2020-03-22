@@ -14,6 +14,10 @@ try {
 		"string(/Project/PropertyGroup/AssemblyVersion)",
 		doc
 	);
+	var currentFileVersion = xpath.select(
+		"string(/Project/PropertyGroup/FileVersion)",
+		doc
+	);
 
 	const versionParts = currentVersion.split(".");
 	let revision = versionParts[versionParts.length - 1];
@@ -27,12 +31,11 @@ try {
 	);
 
 	if (suffix) {
-		currentVersion = currentVersion + "-" + suffix;
 		nextVersion = nextVersion + "-" + suffix;
 	}
 
 	text = text.replace(
-		"<FileVersion>" + currentVersion + "</FileVersion>",
+		"<FileVersion>" + currentFileVersion + "</FileVersion>",
 		"<FileVersion>" + nextVersion + "</FileVersion>"
 	);
 
