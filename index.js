@@ -28,8 +28,8 @@ try {
 		revision++;
 		nextVersion += revision;
 	} else {
-		let wantedBuild = build;
-		if (offset) wantedBuild += offset;
+		let wantedBuild = parseInt(build);
+		if (offset) wantedBuild = parseInt(build) + parseInt(offset);
 		nextVersion += wantedBuild;
 	}
 
