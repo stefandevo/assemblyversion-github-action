@@ -7,6 +7,7 @@ try {
 	let projectFile = core.getInput("project-file");
 	let suffix = core.getInput("suffix");
 	let build = core.getInput("build");
+	let offset = core.getInput("offset");
 
 	var text = fs.readFileSync(projectFile, "utf8");
 
@@ -27,7 +28,9 @@ try {
 		revision++;
 		nextVersion += revision;
 	} else {
-		nextVersion += build;
+		let wantedBuild = build;
+		if (offset) wantedBuild += offset;
+		nextVersion += wantedBuild;
 	}
 
 	text = text.replace(
