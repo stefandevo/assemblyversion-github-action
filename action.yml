@@ -1,11 +1,14 @@
 name: "Set AssemblyVersion"
-description: "Sets the assemblyversion in csproj file by yyyy.mm.dd.x where x is the next revision"
+description: "Sets the assemblyversion in csproj file by yyyy.mm.dd.x where x is the next build"
 inputs:
   project-file:
     description: "Project file"
     required: true
   suffix:
     description: "For example 'beta'; can be left empty"
+    required: false
+  build:
+    description: "Build number to use; can be left empty. You could use the GITHUB_RUN_NUMBER env var for this."
     required: false
 outputs:
   version:
