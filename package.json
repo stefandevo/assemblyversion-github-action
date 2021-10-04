@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/stefandevo/assemblyversion-github-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.3",
+    "@actions/core": "^1.2.6",
     "xmldom": "^0.6.0",
     "xpath": "0.0.27"
   }
